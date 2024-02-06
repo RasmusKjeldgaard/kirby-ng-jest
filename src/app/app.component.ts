@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { HeaderComponent } from '@kirbydesign/designsystem';
 
 @Component({
@@ -6,13 +6,8 @@ import { HeaderComponent } from '@kirbydesign/designsystem';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent {
   @ViewChild(HeaderComponent, { static: true }) header!: HeaderComponent;
-
-  ngAfterViewInit(): void {
-    // console.log('AppComponent: header', this.header);
-    throw new Error(`AppComponent: header -  ${this.header.titleClick}`);
-  }
 
   title = 'ng-16';
 }
