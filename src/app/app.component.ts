@@ -1,5 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
-import { HeaderComponent } from '@kirbydesign/designsystem';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +6,5 @@ import { HeaderComponent } from '@kirbydesign/designsystem';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  @ViewChild(HeaderComponent, { static: true }) header!: HeaderComponent;
-
-  title = 'ng-16';
+  title = 'ng-17';
 }
