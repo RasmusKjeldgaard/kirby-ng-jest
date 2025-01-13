@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppStandaloneComponent } from './app-standalone.component';
 import { KirbyTestingModule } from '@kirbydesign/designsystem/testing-jest';
 
-describe('AppComponent', () => {
+describe('AppStandaloneComponent', () => {
   let component: AppStandaloneComponent;
   let fixture: ComponentFixture<AppStandaloneComponent>;
 
