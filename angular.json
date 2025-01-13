@@ -3,10 +3,10 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-16": {
+    "ng-17-jest": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:component": {
+        "@schematics/:component": {
           "style": "scss"
         }
       },
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-16",
+            "outputPath": "dist/ng-17-jest",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -28,10 +28,21 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
+              
               {
                 "glob": "**/*.svg",
                 "input": "node_modules/@kirbydesign/designsystem/icons/svg",
                 "output": "./assets/kirby/icons/svg"
+              },
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/@kirbydesign/designsystem/icons/svg",
+                "output": "./"
+              },
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
               }
             ],
             "styles": [
@@ -70,10 +81,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ng-16:build:production"
+              "buildTarget": "ng-17-jest:build:production"
             },
             "development": {
-              "browserTarget": "ng-16:build:development"
+              "buildTarget": "ng-17-jest:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +92,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-16:build"
+            "buildTarget": "ng-17-jest:build"
           }
         }
       }

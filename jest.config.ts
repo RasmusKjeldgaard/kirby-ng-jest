@@ -1,10 +1,14 @@
 const esModules = [
   '@kirbydesign/core',
   '@kirbydesign/designsystem',
+  '@stencil/core',
+  '@ionic/core',
+  'ionicons',
   'inputmask',
   '@awesome-cordova-plugins/http',
   'swiper',
   'ssr-window',
+  '.pnpm/@kirbydesign/core',
 ].join('|');
 
 module.exports = {

@@ -1,7 +1,13 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import { KirbyModule } from '@kirbydesign/designsystem';
+import { Routes, provideRouter } from '@angular/router';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { AppComponent } from './app/app.component';
 
-import { AppModule } from './app/app.module';
+const routes: Routes = [];
 
+export const appConfig: ApplicationConfig = {
+  providers: [importProvidersFrom(KirbyModule), provideRouter(routes)],
+};
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+bootstrapApplication(AppComponent, appConfig);
