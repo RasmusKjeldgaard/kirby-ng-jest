@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AppStandaloneComponent } from './app-standalone.component';
 import { KirbyTestingModule } from '@kirbydesign/designsystem/testing-jest';
 
@@ -9,11 +8,7 @@ describe('AppStandaloneComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        KirbyTestingModule,
-        AppStandaloneComponent,
-      ],
+      imports: [KirbyTestingModule, AppStandaloneComponent],
     }).compileComponents();
     fixture = TestBed.createComponent(AppStandaloneComponent);
     component = fixture.componentInstance;
@@ -21,10 +16,10 @@ describe('AppStandaloneComponent', () => {
   });
 
   it('should create the app', () => {
-    expect(fixture).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
   it(`should have as title 'ng-17'`, () => {
-    expect(fixture.componentInstance.title).toEqual('ng-17');
+    expect(component).toEqual('ng-17');
   });
 });
